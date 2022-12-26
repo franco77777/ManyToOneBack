@@ -29,8 +29,8 @@ public class ProductoController {
     private CategoriaService categoriaService;
 
     @GetMapping("/listar")
-    public ResponseEntity<List<Producto>> listarProductos(){
-        return new ResponseEntity<>(productoDao.findAll(), HttpStatus.OK); //retorna toda la lista con la peticion 200
+    public  ResponseEntity<List<Producto>>  listarProductos(){
+        return new ResponseEntity<>(productoDao.findAll(),HttpStatus.OK);
     };
 
     @PostMapping("/crear")
@@ -39,8 +39,8 @@ public class ProductoController {
         return "producto creado";
     }
 
-    @PostMapping("/categoria")
-    public ResponseEntity<List<Categoria>> listarCategoria(@RequestBody Categoria categoria){
+    @GetMapping("/categorias")
+    public ResponseEntity<List<Categoria>> listarCategoria(){
         return new ResponseEntity<>(categoriaService.findAll(), HttpStatus.OK);
     }
 

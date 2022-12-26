@@ -17,7 +17,7 @@ public class Producto {
     private String imagen;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    //@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})  esto es por si sale un error hibernateInitializer
+    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"}) // esto es por si sale un error hibernateInitializer
     @JoinColumn(name="categoria.id")
     private Categoria categoria;
 
